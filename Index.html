@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Priiiyaannnkaaaaaa jiii 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffd1dc, #fff0f5, #ffe5b4);
+      overflow: hidden;
+      text-align: center;
+      color: #444;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5em;
+      color: #d63384;
+      text-shadow: 0 0 10px #fff;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffb3c6; }
+      to { text-shadow: 0 0 20px #ff66b3; }
+    }
+    .cake {
+      margin: 50px auto;
+      width: 180px;
+      height: 180px;
+      background: #ffb6c1;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .cake:hover { transform: scale(1.05); }
+    .candle {
+      width: 10px;
+      height: 40px;
+      background: #fff;
+      position: absolute;
+      left: 50%;
+      top: -50px;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+    .flame {
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle, #ff0 40%, transparent 70%);
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      animation: flicker 0.2s infinite;
+      display: none;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.6; transform: translateX(-50%) scale(1.1); }
+    }
+    .balloon {
+      width: 40px;
+      height: 50px;
+      background: radial-gradient(circle, #ff6b81 40%, #ff4757);
+      border-radius: 50% 50% 45% 45%;
+      position: absolute;
+      bottom: -100px;
+      animation: floatUp 6s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-800px) scale(1.1); opacity: 0; }
+    }
+    .message {
+      margin: 40px auto;
+      max-width: 600px;
+      font-size: 1.1em;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,182,193,0.6);
+      display: none;
+      line-height: 1.6;
+    }
+    audio { display: none; }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday Priiiyaannnkaaaaaa jiii 🎂</h1>
+  <div class="cake" onclick="celebrate()">
+    <div class="candle"></div>
+    <div class="flame" id="flame"></div>
+  </div>
+  <div class="message" id="message">
+    <p><strong>Dear Priyanka 💖</strong></p>
+    <p>On your special day, I just want to say… you are one of the kindest and most genuine people I’ve ever met.<br>
+    In this one year, we’ve seen a lot of ups and downs — moments of laughter, silence, care, and a few misunderstandings too — but through it all, our bond has stayed strong and beautiful 🥹</p>
+    <p>Every talk, every smile, every small moment we’ve shared — it all means a lot more than you might realize 💫<br>
+    You have this rare magic that makes everyone around you feel comfortable and happy, and I truly admire that.</p>
+    <p>I hope today brings you everything you deserve — endless joy, warm hugs, sweet surprises, and smiles that last all day and beyond 🎈🎁</p>
+    <p>Keep being the amazing, beautiful soul you are, Priyanka 💕</p>
+    <p><strong>Yours faithfully,<br> Suraajjjmukhiiiii ☀️🌻</strong></p>
+  </div>
+  <audio id="music" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2d6fa7f7d5.mp3?filename=happy-birthday-to-you-24289.mp3"></audio>
+  <script>
+    function celebrate() {
+      document.getElementById('flame').style.display = 'block';
+      document.getElementById('message').style.display = 'block';
+      document.getElementById('music').play();
+      for (let i = 0; i < 15; i++) {
+        let balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.left = Math.random() * 100 + 'vw';
+        balloon.style.background = `hsl(${Math.random()*360}, 80%, 70%)`;
+        balloon.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(balloon);
+        setTimeout(()=>balloon.remove(), 6000);
+      }
+    }
+  </script>
+</body>
+</html>
